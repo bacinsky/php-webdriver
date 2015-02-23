@@ -49,7 +49,8 @@ class PHPWebDriver_WebDriver extends PHPWebDriver_WebDriverBase {
       $desired_capabilities['firefox_profile'] = $browser_profile->encoded();
     }
     // var_dump($desired_capabilities);
-    $curl_opts = $curl_opts + array(CURLOPT_FOLLOWLOCATION => true);
+    // TODO: follow location won't work with open_basedir
+    //$curl_opts = $curl_opts + array(CURLOPT_FOLLOWLOCATION => true);
       
     $results = $this->curl(
       'POST',
